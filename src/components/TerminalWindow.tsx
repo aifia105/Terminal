@@ -1,16 +1,21 @@
 import { useState, useEffect } from "react";
-import { banner, DAYS, MONTHS } from "../lib/constants";
+import { BANNER, DAYS, MONTHS, INTRO } from "../lib/constants";
 import CleanedTerminal from "./CleanedTerminal";
+import TypingText from "./TypingText";
 
 const TerminalWindow = () => {
   const [showAutoLogin, setShowAutoLogin] = useState(true);
   const [dots, setDots] = useState("");
+  const [showUsernameLine, setShowUsernameLine] = useState(false);
+  const [typedUsername, setTypedUsername] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [typedText, setTypedText] = useState("");
   const [showPrompt, setShowPrompt] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [showFinalPrompt, setShowFinalPrompt] = useState(false);
 
   const commandToType = "whoami";
+  const username = "aifia";
 
   const getLastLoginDate = () => {
     const yesterday = new Date();
@@ -32,15 +37,32 @@ const TerminalWindow = () => {
       setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
     }, 333);
 
-    const timer = setTimeout(() => {
-      setShowAutoLogin(false);
-      clearInterval(dotInterval);
-      setShowPrompt(true);
-    }, 1000);
+    const initialDelay = setTimeout(() => {
+      setShowUsernameLine(true);
+      setTimeout(() => {
+        let usernameIndex = 0;
+        const usernameTypeInterval = setInterval(() => {
+          if (usernameIndex < username.length) {
+            setTypedUsername(username.slice(0, usernameIndex + 1));
+            usernameIndex++;
+          } else {
+            clearInterval(usernameTypeInterval);
+            setTimeout(() => {
+              setShowPassword(true);
+              setTimeout(() => {
+                setShowAutoLogin(false);
+                clearInterval(dotInterval);
+                setShowPrompt(true);
+              }, 1100);
+            }, 200);
+          }
+        }, 100);
+      }, 200);
+    }, 500);
 
     return () => {
-      clearTimeout(timer);
       clearInterval(dotInterval);
+      clearTimeout(initialDelay);
     };
   }, []);
 
@@ -74,6 +96,17 @@ const TerminalWindow = () => {
     return (
       <div className="flex h-[96%] w-[98%] flex-col items-start border border-[#fe8181] rounded-b-sm bg-[#1c1b1a] p-3">
         <div className="text-[#d2d4d6]">Auto login in progress{dots}</div>
+        {showUsernameLine && (
+          <div className="text-[#d2d4d6]">
+            <span className="mr-1">root@portfolio:~$</span>username:
+            {typedUsername}
+          </div>
+        )}
+        {showPassword && (
+          <div className="text-[#d2d4d6]">
+            <span className="mr-1">root@portfolio:~$</span>password:
+          </div>
+        )}
       </div>
     );
   }
@@ -87,15 +120,35 @@ const TerminalWindow = () => {
           </div>
           <div className="text-[#d2d4d6] mb-2">
             <span className="mr-1">aifia@portfolio:~$</span>
-            {typedText}
+            <TypingText
+              text={commandToType}
+              speed={100}
+              delay={700}
+              onComplete={() => {
+                setTimeout(() => {
+                  setShowBanner(true);
+                  setTimeout(() => setShowFinalPrompt(true), 100);
+                }, 500);
+              }}
+            />
           </div>
         </div>
       )}
       {showBanner && (
-        <div
-          className="text-[16px] mb-2"
-          dangerouslySetInnerHTML={{ __html: banner }}
-        ></div>
+        <div className="mb-6">
+          <div
+            className="text-base"
+            dangerouslySetInnerHTML={{ __html: BANNER }}
+          ></div>
+          <div
+            className="text-base mt-8 mb-3"
+            dangerouslySetInnerHTML={{ __html: INTRO }}
+          ></div>
+          <div className="text-[#d2d4d6] text-base">
+            <span className="text-[#febc81]">Tip:</span> type '--help' to
+            explore this system.
+          </div>
+        </div>
       )}
       {showFinalPrompt && <CleanedTerminal />}
     </div>

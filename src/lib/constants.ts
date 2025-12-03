@@ -47,14 +47,22 @@ export const MONTHS = [
   "Dec",
 ];
 
-export const banner = `<div style="font-family: monospace; line-height: 1.2;">
+export const BANNER = `<div style="font-family: monospace; line-height: 1.2;">
 <pre style="color: #fe8181; margin: 0;">
-   ___   ____  _____ ___    _    ___  ____  
-  / _ \\ |_ _| |  ___|_ _|  / \\  / _ \\/ ___| 
- | |_| | | |  | |_   | |  / _ \\| | | \\___ \\ 
- |  _  | | |  |  _|  | | / ___ \\ |_| |___) |
- |_| |_||___| |_|   |___/_/   \\_\\___/|____/ 
+     _    _  __ _       ____            _    __       _ _       
+    / \\  (_)/ _(_) __ _|  _ \\ ___  _ __| |_ / _| ___ | (_) ___  
+   / _ \\ | | |_| |/ _\` | |_) / _ \\| '__| __| |_ / _ \\| | |/ _ \\ 
+  / ___ \\| |  _| | (_| |  __/ (_) | |  | |_|  _| (_) | | | (_) |
+ /_/   \\_\\_|_| |_|\\__,_|_|   \\___/|_|   \\__|_|  \\___/|_|_|\\___/ 
 </pre>
-<div style="color: #2d3748;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+<div style="color: #2d3748;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 <div style="color: #febc81;">Version: 1.0 | Status: Online</div>
+</div>`;
+
+export const INTRO = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6">
+Welcome to <span style="color: #fe8181; font-weight: bold;">Aifia</span> Portfolio.<br/>
+<span style="color: #febc81;">Systems Engineer</span> • <span style="color: #febc81;">Problem Solver</span> • <span style="color: #febc81;">Linux Enthusiast</span> • <span style="color: #febc81;">Software Developer</span><br />
+<br/>
+Breaking problems down to the metal.<br />
+Focused on <span style="color: #febc81;">distributed systems</span>, <span style="color: #febc81;">backend architectures</span> and <span style="color: #febc81;">CLI tooling</span>.
 </div>`;

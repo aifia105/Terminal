@@ -5,6 +5,15 @@
     animation: blink 1s step-end infinite;
 }
 
+.typing-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background-color: #fe8181;
+    margin-left: 2px;
+    animation: blink 0.7s step-end infinite;
+}
+
 @keyframes blink {
     0%,
     50% {
