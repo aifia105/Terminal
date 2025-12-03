@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+.terminal-cursor {
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    50.01%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeInTerminal 0.5s ease-in;
+}
+
+@keyframes fadeInTerminal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: "JetBrains Mono", monospace;
+}
