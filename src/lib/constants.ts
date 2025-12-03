@@ -66,3 +66,6 @@ Welcome to <span style="color: #fe8181; font-weight: bold;">Aifia</span> Portfol
 Breaking problems down to the metal.<br />
 Focused on <span style="color: #febc81;">distributed systems</span>, <span style="color: #febc81;">backend architectures</span> and <span style="color: #febc81;">CLI tooling</span>.
 </div>`;
+
+export const COMMANDTOUSER = "whoami";
+export const USERNAME = "aifia";

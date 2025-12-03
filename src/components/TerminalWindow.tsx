@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
-import { BANNER, DAYS, MONTHS, INTRO } from "../lib/constants";
+import {
+  BANNER,
+  DAYS,
+  MONTHS,
+  INTRO,
+  USERNAME,
+  COMMANDTOUSER,
+} from "../lib/constants";
 import CleanedTerminal from "./CleanedTerminal";
-import TypingText from "./TypingText";
 
 const TerminalWindow = () => {
   const [showAutoLogin, setShowAutoLogin] = useState(true);
@@ -13,9 +19,6 @@ const TerminalWindow = () => {
   const [showPrompt, setShowPrompt] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [showFinalPrompt, setShowFinalPrompt] = useState(false);
-
-  const commandToType = "whoami";
-  const username = "aifia";
 
   const getLastLoginDate = () => {
     const yesterday = new Date();
@@ -42,8 +45,8 @@ const TerminalWindow = () => {
       setTimeout(() => {
         let usernameIndex = 0;
         const usernameTypeInterval = setInterval(() => {
-          if (usernameIndex < username.length) {
-            setTypedUsername(username.slice(0, usernameIndex + 1));
+          if (usernameIndex < USERNAME.length) {
+            setTypedUsername(USERNAME.slice(0, usernameIndex + 1));
             usernameIndex++;
           } else {
             clearInterval(usernameTypeInterval);
@@ -72,8 +75,8 @@ const TerminalWindow = () => {
     const startTypingTimer = setTimeout(() => {
       let currentIndex = 0;
       const typeInterval = setInterval(() => {
-        if (currentIndex < commandToType.length) {
-          setTypedText(commandToType.slice(0, currentIndex + 1));
+        if (currentIndex < COMMANDTOUSER.length) {
+          setTypedText(COMMANDTOUSER.slice(0, currentIndex + 1));
           currentIndex++;
         } else {
           clearInterval(typeInterval);
@@ -120,17 +123,7 @@ const TerminalWindow = () => {
           </div>
           <div className="text-[#d2d4d6] mb-2">
             <span className="mr-1">aifia@portfolio:~$</span>
-            <TypingText
-              text={commandToType}
-              speed={100}
-              delay={700}
-              onComplete={() => {
-                setTimeout(() => {
-                  setShowBanner(true);
-                  setTimeout(() => setShowFinalPrompt(true), 100);
-                }, 500);
-              }}
-            />
+            {typedText}
           </div>
         </div>
       )}
