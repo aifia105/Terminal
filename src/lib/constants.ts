@@ -48,24 +48,78 @@ export const MONTHS = [
 ];
 
 export const BANNER = `<div style="font-family: monospace; line-height: 1.2;">
-<pre style="color: #fe8181; margin: 0;">
-     _    _  __ _       ____            _    __       _ _       
-    / \\  (_)/ _(_) __ _|  _ \\ ___  _ __| |_ / _| ___ | (_) ___  
-   / _ \\ | | |_| |/ _\` | |_) / _ \\| '__| __| |_ / _ \\| | |/ _ \\ 
-  / ___ \\| |  _| | (_| |  __/ (_) | |  | |_|  _| (_) | | | (_) |
- /_/   \\_\\_|_| |_|\\__,_|_|   \\___/|_|   \\__|_|  \\___/|_|_|\\___/ 
-</pre>
+<div style="color: #fe8181; margin: 0;">
+Aifia Med Amine • <span style="color: #febc81;">Software Engineer</span>
+</div>
 <div style="color: #2d3748;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 <div style="color: #febc81;">Version: 1.0 | Status: Online</div>
 </div>`;
 
 export const INTRO = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6">
-Welcome to <span style="color: #fe8181; font-weight: bold;">Aifia</span> Portfolio.<br/>
-<span style="color: #febc81;">Systems Engineer</span> • <span style="color: #febc81;">Problem Solver</span> • <span style="color: #febc81;">Linux Enthusiast</span> • <span style="color: #febc81;">Software Developer</span><br />
-<br/>
-Breaking problems down to the metal.<br />
-Focused on <span style="color: #febc81;">distributed systems</span>, <span style="color: #febc81;">backend architectures</span> and <span style="color: #febc81;">CLI tooling</span>.
+
+Breaking problems down to the metal !<br />
+Focus: <span style="color: #febc81;">distributed systems</span>, <span style="color: #febc81;">backend architectures</span>, <span style="color: #febc81;">CLI tooling</span>.
 </div>`;
 
 export const COMMANDTOUSER = "whoami";
 export const USERNAME = "aifia";
+
+export const COMMANDS = {
+  whoami: {
+    description: "Display system identity",
+    usage: "whoami",
+  },
+  sysinfo: {
+    description: "Show system information",
+    usage: "sysinfo",
+  },
+  ls: {
+    description: "List available directories",
+    usage: "ls [directory]",
+  },
+  projects: {
+    description: "Show projects tree structure",
+    usage: "projects",
+  },
+  cat: {
+    description: "Display project details",
+    usage: "cat <path>",
+  },
+  tools: {
+    description: "List available tools",
+    usage: "tools",
+  },
+  contact: {
+    description: "Display contact information",
+    usage: "contact",
+  },
+  clear: {
+    description: "Clear terminal screen",
+    usage: "clear",
+  },
+  help: {
+    description: "Show this help message",
+    usage: "help",
+  },
+};
+
+export const HELP_MESSAGE = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.8; color: #d2d4d6;">
+<div style="color: #febc81; margin-bottom: 8px;">Available Commands:</div>
+<div style="margin-left: 16px;">
+  <div><span style="color: #fe8181;">whoami</span>           Display system identity</div>
+  <div><span style="color: #fe8181;">sysinfo</span>          Show system information</div>
+  <div><span style="color: #fe8181;">ls</span> [directory]   List available directories</div>
+  <div><span style="color: #fe8181;">cat</span> &lt;path&gt;       Display project details</div>
+  <div><span style="color: #fe8181;">projects</span>         Show projects tree structure</div>
+  <div><span style="color: #fe8181;">tools</span>            List available tools</div>
+  <div><span style="color: #fe8181;">contact</span>          Display contact information</div>
+  <div><span style="color: #fe8181;">clear</span>            Clear terminal screen</div>
+  <div><span style="color: #fe8181;">help</span>             Show this help message</div>
+</div>
+</div>`;
+
+export const INVALID_COMMAND_RESPONSE = `<div style="font-family: 'JetBrains Mono', monospace; color: #fe8181;">
+Command not found. Type <span style="color: #febc81;">'help'</span> to see available commands.
+</div>`;
+
+//<span style="color: #febc81;">Systems Engineer</span> • <span style="color: #febc81;">Problem Solver</span> • <span style="color: #febc81;">Linux Enthusiast</span> • <span style="color: #febc81;">Software Developer</span><br />

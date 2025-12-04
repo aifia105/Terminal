@@ -8,6 +8,7 @@ import {
   COMMANDTOUSER,
 } from "../lib/constants";
 import CleanedTerminal from "./CleanedTerminal";
+import CmdOutput from "./CmdOutput";
 
 const TerminalWindow = () => {
   const [showAutoLogin, setShowAutoLogin] = useState(true);
@@ -19,6 +20,8 @@ const TerminalWindow = () => {
   const [showPrompt, setShowPrompt] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [showFinalPrompt, setShowFinalPrompt] = useState(false);
+  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [input, setInput] = useState("");
 
   const getLastLoginDate = () => {
     const yesterday = new Date();
@@ -95,18 +98,25 @@ const TerminalWindow = () => {
     return () => clearTimeout(startTypingTimer);
   }, [showPrompt]);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && input.trim()) {
+      setCommandHistory([...commandHistory, input]);
+      setInput("");
+    }
+  };
+
   if (showAutoLogin) {
     return (
       <div className="flex h-[96%] w-[98%] flex-col items-start border border-[#fe8181] rounded-b-sm bg-[#1c1b1a] p-3">
         <div className="text-[#d2d4d6]">Auto login in progress{dots}</div>
         {showUsernameLine && (
-          <div className="text-[#d2d4d6]">
+          <div className="text-[#d2d4d6] ">
             <span className="mr-1">root@portfolio:~$</span>username:
             {typedUsername}
           </div>
         )}
         {showPassword && (
-          <div className="text-[#d2d4d6]">
+          <div className="text-[#d2d4d6] ">
             <span className="mr-1">root@portfolio:~$</span>password:
           </div>
         )}
@@ -117,7 +127,7 @@ const TerminalWindow = () => {
   return (
     <div className="flex h-[96%] w-[98%] flex-col items-start border border-[#fe8181] rounded-b-sm bg-[#1c1b1a] p-3">
       {showPrompt && (
-        <div className="animate-fadeIn">
+        <div className="animate-fadeIn ">
           <div className="text-[#d2d4d6] mb-2">
             Last login: {getLastLoginDate()}
           </div>
@@ -128,22 +138,38 @@ const TerminalWindow = () => {
         </div>
       )}
       {showBanner && (
-        <div className="mb-6">
+        <div className="my-6">
           <div
             className="text-base"
             dangerouslySetInnerHTML={{ __html: BANNER }}
           ></div>
           <div
-            className="text-base mt-8 mb-3"
+            className="text-base mt-8 mb-4"
             dangerouslySetInnerHTML={{ __html: INTRO }}
           ></div>
           <div className="text-[#d2d4d6] text-base">
-            <span className="text-[#febc81]">Tip:</span> type '--help' to
-            explore this system.
+            <span className="text-[#febc81]">Hint:</span> type 'help' to explore
+            this system.
           </div>
         </div>
       )}
-      {showFinalPrompt && <CleanedTerminal />}
+      {commandHistory.map((cmd, index) => (
+        <div key={index}>
+          <div className="text-[#d2d4d6] cursor-text">
+            <span className="mr-1">aifia@portfolio:~$</span>
+            <span>{cmd}</span>
+          </div>
+          <CmdOutput cmd={cmd} />
+        </div>
+      ))}
+      {showFinalPrompt && (
+        <CleanedTerminal
+          input={input}
+          setInput={setInput}
+          onKeyDown={handleKeyDown}
+          showCursor={true}
+        />
+      )}
     </div>
   );
 };
