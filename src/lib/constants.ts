@@ -47,27 +47,58 @@ export const MONTHS = [
   "Dec",
 ];
 
+// export const BANNER = `<div style="font-family: monospace; line-height: 1.2;">
+// <div style="color: #fe8181; margin: 0;">
+// Aifia Med Amine • <span style="color: #febc81;">Software Engineer</span>
+// </div>
+// <div style="color: #2d3748;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+// <div style="color: #febc81;">Version: 1.0 | Status: Online</div>
+// </div>`;
+
+// export const INTRO = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6">
+
+// Breaking problems down to the metal !<br />
+// Focus: <span style="color: #febc81;">distributed systems</span>, <span style="color: #febc81;">backend architectures</span>, <span style="color: #febc81;">CLI tooling</span>.
+// </div>`;
+
+export const COMMANDTOUSER = "whoami";
+export const USERNAME = "aifia";
+
+export const HELP_MESSAGE = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.8; color: #d2d4d6;">
+<div style="color: #febc81;">Available Commands:</div>
+<div style="margin-left: 16px;">
+  <div><span style="color: #fe8181;">whoami</span>           Display system identity</div>
+  <div><span style="color: #fe8181;">sysinfo</span>          Show system information</div>
+  <div><span style="color: #fe8181;">ls</span> [directory]   List available directories</div>
+  <div><span style="color: #fe8181;">cat</span> &lt;path&gt;       Display project details</div>
+  <div><span style="color: #fe8181;">projects</span>         Show projects tree structure</div>
+  <div><span style="color: #fe8181;">tools</span>            List available tools</div>
+  <div><span style="color: #fe8181;">contact</span>          Display contact information</div>
+  <div><span style="color: #fe8181;">clear</span>            Clear terminal screen</div>
+  <div><span style="color: #fe8181;">help</span>             Show this help message</div>
+</div>
+</div>`;
+
+export const INVALID_COMMAND_RESPONSE = `<div style="font-family: 'JetBrains Mono', monospace; color: #d2d4d6;">
+Nice try. Type <span style="color: #febc81;">'help'</span> to see available commands.
+</div>`;
+
 export const BANNER = `<div style="font-family: monospace; line-height: 1.2;">
 <div style="color: #fe8181; margin: 0;">
 Aifia Med Amine • <span style="color: #febc81;">Software Engineer</span>
 </div>
 <div style="color: #2d3748;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 <div style="color: #febc81;">Version: 1.0 | Status: Online</div>
-</div>`;
-
-export const INTRO = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6">
-
+<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6; margin-top: 2em;">
 Breaking problems down to the metal !<br />
 Focus: <span style="color: #febc81;">distributed systems</span>, <span style="color: #febc81;">backend architectures</span>, <span style="color: #febc81;">CLI tooling</span>.
+</div>
 </div>`;
-
-export const COMMANDTOUSER = "whoami";
-export const USERNAME = "aifia";
 
 export const COMMANDS = {
   whoami: {
     description: "Display system identity",
-    usage: "whoami",
+    output: BANNER,
   },
   sysinfo: {
     description: "Show system information",
@@ -99,27 +130,7 @@ export const COMMANDS = {
   },
   help: {
     description: "Show this help message",
-    usage: "help",
+    output: HELP_MESSAGE,
   },
 };
-
-export const HELP_MESSAGE = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.8; color: #d2d4d6;">
-<div style="color: #febc81; margin-bottom: 8px;">Available Commands:</div>
-<div style="margin-left: 16px;">
-  <div><span style="color: #fe8181;">whoami</span>           Display system identity</div>
-  <div><span style="color: #fe8181;">sysinfo</span>          Show system information</div>
-  <div><span style="color: #fe8181;">ls</span> [directory]   List available directories</div>
-  <div><span style="color: #fe8181;">cat</span> &lt;path&gt;       Display project details</div>
-  <div><span style="color: #fe8181;">projects</span>         Show projects tree structure</div>
-  <div><span style="color: #fe8181;">tools</span>            List available tools</div>
-  <div><span style="color: #fe8181;">contact</span>          Display contact information</div>
-  <div><span style="color: #fe8181;">clear</span>            Clear terminal screen</div>
-  <div><span style="color: #fe8181;">help</span>             Show this help message</div>
-</div>
-</div>`;
-
-export const INVALID_COMMAND_RESPONSE = `<div style="font-family: 'JetBrains Mono', monospace; color: #fe8181;">
-Nice try. Type <span style="color: #febc81;">'help'</span> to see available commands.
-</div>`;
-
 //<span style="color: #febc81;">Systems Engineer</span> • <span style="color: #febc81;">Problem Solver</span> • <span style="color: #febc81;">Linux Enthusiast</span> • <span style="color: #febc81;">Software Developer</span><br />

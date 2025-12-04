@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   BANNER,
   DAYS,
   MONTHS,
-  INTRO,
   USERNAME,
   COMMANDTOUSER,
 } from "../lib/constants";
@@ -23,6 +22,7 @@ const TerminalWindow = () => {
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [input, setInput] = useState("");
   const [clearHistory, setClearHistory] = useState(false);
+  const terminalEndRef = useRef<HTMLDivElement>(null);
 
   const getLastLoginDate = () => {
     const yesterday = new Date();
@@ -113,6 +113,10 @@ const TerminalWindow = () => {
     }
   }, [clearHistory]);
 
+  useEffect(() => {
+    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [commandHistory, showFinalPrompt]);
+
   if (showAutoLogin) {
     return (
       <div className="flex h-[96%] w-[98%] flex-col items-start border border-[#fe8181] rounded-b-sm bg-[#1c1b1a] p-3">
@@ -133,7 +137,7 @@ const TerminalWindow = () => {
   }
 
   return (
-    <div className="flex h-[96%] w-[98%] flex-col items-start border border-[#fe8181] rounded-b-sm bg-[#1c1b1a] p-3">
+    <div className="flex h-[96%] w-[98%] flex-col items-start border border-[#fe8181] rounded-b-sm bg-[#1c1b1a] p-3 overflow-auto scrollbar-hide">
       {showPrompt && (
         <div className="animate-fadeIn ">
           <div className="text-[#d2d4d6] mb-2">
@@ -146,14 +150,10 @@ const TerminalWindow = () => {
         </div>
       )}
       {showBanner && (
-        <div className="my-6">
+        <div className="mt-5 mb-4">
           <div
-            className="text-base"
+            className="text-base mt-2 mb-4 "
             dangerouslySetInnerHTML={{ __html: BANNER }}
-          ></div>
-          <div
-            className="text-base mt-8 mb-4"
-            dangerouslySetInnerHTML={{ __html: INTRO }}
           ></div>
           <div className="text-[#d2d4d6] text-base">
             <span className="text-[#febc81]">Hint:</span> type 'help' to explore
@@ -162,20 +162,22 @@ const TerminalWindow = () => {
         </div>
       )}
       {commandHistory.map((cmd, index) => (
-        <div key={index}>
-          <div className="text-[#d2d4d6] cursor-text  my-1">
+        <div key={index} className="mb-1">
+          <div className="text-[#d2d4d6] cursor-text mb-3">
             <span className="mr-1">aifia@portfolio:~$</span>
             <span>{cmd}</span>
           </div>
-          <CmdOutput
-            setClearHistory={setClearHistory}
-            clearHistory={clearHistory}
-            cmd={cmd}
-          />
+          <div className="mb-2">
+            <CmdOutput
+              setClearHistory={setClearHistory}
+              clearHistory={clearHistory}
+              cmd={cmd}
+            />
+          </div>
         </div>
       ))}
       {showFinalPrompt && (
-        <div className="my-2">
+        <div className="my-2" ref={terminalEndRef}>
           <CleanedTerminal
             input={input}
             setInput={setInput}
