@@ -4,8 +4,23 @@ import {
   INVALID_COMMAND_RESPONSE,
 } from "../lib/constants";
 
-const CmdOutput = ({ cmd }: { cmd: string }) => {
+const CmdOutput = ({
+  cmd,
+  clearHistory,
+  setClearHistory,
+}: {
+  cmd: string;
+  clearHistory: boolean;
+  setClearHistory: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const mappedCmd = cmd.trim().toLowerCase();
+
+  if (mappedCmd === "clear") {
+    if (!clearHistory) {
+      setClearHistory(true);
+    }
+    return null;
+  }
 
   if (mappedCmd === "help" || mappedCmd === "--help") {
     return (

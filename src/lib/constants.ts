@@ -119,7 +119,7 @@ export const HELP_MESSAGE = `<div style="font-family: 'JetBrains Mono', monospac
 </div>`;
 
 export const INVALID_COMMAND_RESPONSE = `<div style="font-family: 'JetBrains Mono', monospace; color: #fe8181;">
-Command not found. Type <span style="color: #febc81;">'help'</span> to see available commands.
+Nice try. Type <span style="color: #febc81;">'help'</span> to see available commands.
 </div>`;
 
 //<span style="color: #febc81;">Systems Engineer</span> • <span style="color: #febc81;">Problem Solver</span> • <span style="color: #febc81;">Linux Enthusiast</span> • <span style="color: #febc81;">Software Developer</span><br />

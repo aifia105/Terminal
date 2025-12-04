@@ -22,6 +22,7 @@ const TerminalWindow = () => {
   const [showFinalPrompt, setShowFinalPrompt] = useState(false);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [input, setInput] = useState("");
+  const [clearHistory, setClearHistory] = useState(false);
 
   const getLastLoginDate = () => {
     const yesterday = new Date();
@@ -105,6 +106,13 @@ const TerminalWindow = () => {
     }
   };
 
+  useEffect(() => {
+    if (clearHistory) {
+      setCommandHistory([]);
+      setClearHistory(false);
+    }
+  }, [clearHistory]);
+
   if (showAutoLogin) {
     return (
       <div className="flex h-[96%] w-[98%] flex-col items-start border border-[#fe8181] rounded-b-sm bg-[#1c1b1a] p-3">
@@ -155,20 +163,26 @@ const TerminalWindow = () => {
       )}
       {commandHistory.map((cmd, index) => (
         <div key={index}>
-          <div className="text-[#d2d4d6] cursor-text">
+          <div className="text-[#d2d4d6] cursor-text  my-1">
             <span className="mr-1">aifia@portfolio:~$</span>
             <span>{cmd}</span>
           </div>
-          <CmdOutput cmd={cmd} />
+          <CmdOutput
+            setClearHistory={setClearHistory}
+            clearHistory={clearHistory}
+            cmd={cmd}
+          />
         </div>
       ))}
       {showFinalPrompt && (
-        <CleanedTerminal
-          input={input}
-          setInput={setInput}
-          onKeyDown={handleKeyDown}
-          showCursor={true}
-        />
+        <div className="my-2">
+          <CleanedTerminal
+            input={input}
+            setInput={setInput}
+            onKeyDown={handleKeyDown}
+            showCursor={true}
+          />
+        </div>
       )}
     </div>
   );
