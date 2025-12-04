@@ -110,6 +110,7 @@ const TerminalWindow = () => {
     if (clearHistory) {
       setCommandHistory([]);
       setClearHistory(false);
+      setShowBanner(false);
     }
   }, [clearHistory]);
 

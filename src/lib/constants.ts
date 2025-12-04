@@ -47,20 +47,6 @@ export const MONTHS = [
   "Dec",
 ];
 
-// export const BANNER = `<div style="font-family: monospace; line-height: 1.2;">
-// <div style="color: #fe8181; margin: 0;">
-// Aifia Med Amine • <span style="color: #febc81;">Software Engineer</span>
-// </div>
-// <div style="color: #2d3748;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
-// <div style="color: #febc81;">Version: 1.0 | Status: Online</div>
-// </div>`;
-
-// export const INTRO = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6">
-
-// Breaking problems down to the metal !<br />
-// Focus: <span style="color: #febc81;">distributed systems</span>, <span style="color: #febc81;">backend architectures</span>, <span style="color: #febc81;">CLI tooling</span>.
-// </div>`;
-
 export const COMMANDTOUSER = "whoami";
 export const USERNAME = "aifia";
 
@@ -95,6 +81,14 @@ Focus: <span style="color: #febc81;">distributed systems</span>, <span style="co
 </div>
 </div>`;
 
+export const PROJECTS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6;">
+<div style="color: #febc81;">projects</div>
+<div style="color: #2d3748;">├──</div> <span style="color: #fe8181;">ecommerce-system</span>
+<div style="color: #2d3748;">├──</div> <span style="color: #fe8181;">farm-platform</span>
+<div style="color: #2d3748;">├──</div> <span style="color: #fe8181;">cli-tools</span>
+<div style="color: #2d3748;">└──</div> <span style="color: #fe8181;">dns-server</span>
+</div>`;
+
 export const COMMANDS = {
   whoami: {
     description: "Display system identity",
@@ -106,11 +100,15 @@ export const COMMANDS = {
   },
   ls: {
     description: "List available directories",
+    usage: "ls",
+  },
+  "ls  [directory]": {
+    description: "List directories content",
     usage: "ls [directory]",
   },
   projects: {
     description: "Show projects tree structure",
-    usage: "projects",
+    output: PROJECTS,
   },
   cat: {
     description: "Display project details",
@@ -133,4 +131,3 @@ export const COMMANDS = {
     output: HELP_MESSAGE,
   },
 };
-//<span style="color: #febc81;">Systems Engineer</span> • <span style="color: #febc81;">Problem Solver</span> • <span style="color: #febc81;">Linux Enthusiast</span> • <span style="color: #febc81;">Software Developer</span><br />
