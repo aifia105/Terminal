@@ -83,10 +83,10 @@ Focus: <span style="color: #febc81;">distributed systems</span>, <span style="co
 
 export const PROJECTS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6;">
 <div style="color: #febc81;">projects</div>
-<div style="color: #2d3748;">├──</div> <span style="color: #fe8181;">ecommerce-system</span>
-<div style="color: #2d3748;">├──</div> <span style="color: #fe8181;">farm-platform</span>
-<div style="color: #2d3748;">├──</div> <span style="color: #fe8181;">cli-tools</span>
-<div style="color: #2d3748;">└──</div> <span style="color: #fe8181;">dns-server</span>
+<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">ecommerce-system</span></div>
+<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">farm-platform</span></div>
+<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">cli-tools</span></div>
+<div><span style="color: #2d3748;">└──</span> <span style="color: #fe8181;">dns-server</span></div>
 </div>`;
 
 export const COMMANDS = {

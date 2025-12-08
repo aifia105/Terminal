@@ -111,6 +111,7 @@ const TerminalWindow = () => {
       setCommandHistory([]);
       setClearHistory(false);
       setShowBanner(false);
+      setTypedText("");
     }
   }, [clearHistory]);
 
@@ -144,10 +145,12 @@ const TerminalWindow = () => {
           <div className="text-[#d2d4d6] mb-2">
             Last login: {getLastLoginDate()}
           </div>
-          <div className="text-[#d2d4d6] mb-2">
-            <span className="mr-1">aifia@portfolio:~$</span>
-            {typedText}
-          </div>
+        </div>
+      )}
+      {showPrompt && typedText && (
+        <div className="text-[#d2d4d6] ">
+          <span className="mr-1">aifia@portfolio:~$</span>
+          {typedText}
         </div>
       )}
       {showBanner && (
