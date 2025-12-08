@@ -71,7 +71,7 @@ Nice try. Type <span style="color: #febc81;">'help'</span> to see available comm
 
 export const BANNER = `<div style="font-family: monospace; line-height: 1.2;">
 <div style="color: #fe8181; margin: 0;">
-Aifia Med Amine • <span style="color: #febc81;">Software Engineer</span>
+Aifia Med Amine • <span style="color: #febc81;">Software & Systems Engineer</span>
 </div>
 <div style="color: #2d3748;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 <div style="color: #febc81;">Version: 1.0 | Status: Online</div>
@@ -87,6 +87,30 @@ export const PROJECTS = `<div style="font-family: 'JetBrains Mono', monospace; l
 <div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">farm-platform</span></div>
 <div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">cli-tools</span></div>
 <div><span style="color: #2d3748;">└──</span> <span style="color: #fe8181;">dns-server</span></div>
+</div>`;
+
+export const TOOLS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
+<div style="color: #febc81; margin-bottom: 0.5em;">--- Tech Stack ---</div>
+<div style="margin-left: 1em;">
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Languages:</span> JavaScript, TypeScript, Java, Python, Go, Bash</div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Frameworks:</span> Next.js, NestJS, Spring Boot, Express, Node.js</div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Databases:</span> MongoDB, MySQL, PostgreSQL, Redis</div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Cloud & Infra:</span> AWS, Docker, Docker Compose, Linux, Nginx, S3, MongoDB Atlas</div>
+    <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Networking:</span> DNS, TCP/UDP(Go), HTTP/HTTPS</div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Tooling:</span> Mongoose, GraphQL, Swagger UI, Postman, Git, GitHub, Socket.io</div>
+</div>
+<div style="color: #2d3748; margin-top: 0.5em;">──────────────────</div>
+</div>`;
+
+export const CONTACT = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
+<div style="color: #febc81; margin-bottom: 0.5em;">--- Contact & Socials ---</div>
+<div style="margin-left: 1em;">
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Email:</span> mohamedaifia34@gmail.com</div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Phone:</span> +216 26 110 335</div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">LinkedIn:</span> <a href="https://www.linkedin.com/in/aifia-mohamed-amine" target="_blank" style="color: #febc81; text-decoration: none;">Aifia Mohamed Amine</a></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">GitHub:</span> <a href="https://github.com/aifia105" target="_blank" style="color: #febc81; text-decoration: none;">aifia105</a></div>
+</div>
+<div style="color: #2d3748; margin-top: 0.5em;">─────────────────────────</div>
 </div>`;
 
 export const COMMANDS = {
@@ -116,15 +140,15 @@ export const COMMANDS = {
   },
   tools: {
     description: "List available tools",
-    usage: "tools",
+    output: TOOLS,
   },
   contact: {
     description: "Display contact information",
-    usage: "contact",
+    output: CONTACT,
   },
   clear: {
     description: "Clear terminal screen",
-    usage: "clear",
+    output: "",
   },
   help: {
     description: "Show this help message",
