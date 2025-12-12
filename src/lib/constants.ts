@@ -81,14 +81,6 @@ Focus: <span style="color: #febc81;">distributed systems</span>, <span style="co
 </div>
 </div>`;
 
-export const PROJECTS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.5; color: #d2d4d6;">
-<div style="color: #febc81;">projects</div>
-<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">ecommerce-system</span></div>
-<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">farm-platform</span></div>
-<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">cli-tools</span></div>
-<div><span style="color: #2d3748;">└──</span> <span style="color: #fe8181;">dns-server</span></div>
-</div>`;
-
 export const TOOLS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
 <div style="color: #febc81; margin-bottom: 0.5em;">--- Tech Stack ---</div>
 <div style="margin-left: 1em;">
@@ -111,6 +103,23 @@ export const CONTACT = `<div style="font-family: 'JetBrains Mono', monospace; li
   <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">GitHub:</span> <a href="https://github.com/aifia105" target="_blank" style="color: #febc81; text-decoration: none;">aifia105</a></div>
 </div>
 <div style="color: #2d3748; margin-top: 0.5em;">─────────────────────────</div>
+</div>`;
+
+export const PROJECTS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
+<div style="color: #febc81; margin-bottom: 0.5em;">─── Projects ───</div>
+<div style="margin-left: 1em;">
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Shrimp Farm Management Platform (Enterprise SaaS)</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Fullstack E-Commerce Platform</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Gym Mobile Application</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Containerized URL Shortener Service</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">DNS Server from Scratch (TCP & UDP)</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Machine Learning Housing Price Predictor</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">File-Sharing Backend Service</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">GraphQL Pokémon Explorer</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Go HTTP Server</span></div>
+  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">CLI Linux Server Monitor (RAM, CPU, Disk)</span></div>
+</div>
+<div style="color: #2d3748; margin-top: 0.5em;">────────────────</div>
 </div>`;
 
 export const COMMANDS = {
