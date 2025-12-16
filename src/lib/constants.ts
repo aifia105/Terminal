@@ -55,9 +55,9 @@ export const HELP_MESSAGE = `<div style="font-family: 'JetBrains Mono', monospac
 <div style="margin-left: 16px;">
   <div><span style="color: #fe8181;">whoami</span>           Display system identity</div>
   <div><span style="color: #fe8181;">sysinfo</span>          Show system information</div>
-  <div><span style="color: #fe8181;">ls</span> [directory]   List available directories</div>
-  <div><span style="color: #fe8181;">cat</span> &lt;path&gt;       Display project details</div>
-  <div><span style="color: #fe8181;">cd</span>         Change directory</div>
+  <div><span style="color: #fe8181;">ls</span>               List available directories</div>
+  <div><span style="color: #fe8181;">cd</span> [directory]  Change directory</div>
+  <div><span style="color: #fe8181;">cat</span> &lt;file&gt;        Display file contents</div>
   <div><span style="color: #fe8181;">clear</span>            Clear terminal screen</div>
   <div><span style="color: #fe8181;">help</span>             Show this help message</div>
 </div>
@@ -80,44 +80,106 @@ Focus: <span style="color: #febc81;">distributed systems</span>, <span style="co
 </div>`;
 
 export const TOOLS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
-<div style="color: #febc81; margin-bottom: 0.5em;">--- Tech Stack ---</div>
-<div style="margin-left: 1em;">
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Languages:</span> JavaScript, TypeScript, Java, Python, Go, Bash</div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Frameworks:</span> Next.js, NestJS, Spring Boot, Express, Node.js</div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Databases:</span> MongoDB, MySQL, PostgreSQL, Redis</div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Cloud & Infra:</span> AWS, Docker, Docker Compose, Linux, Nginx, S3, MongoDB Atlas</div>
-    <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Networking:</span> DNS, TCP/UDP(Go), HTTP/HTTPS</div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Tooling:</span> Mongoose, GraphQL, Swagger UI, Postman, Git, GitHub, Socket.io</div>
-</div>
-<div style="color: #2d3748; margin-top: 0.5em;">──────────────────</div>
+<div style="color: #febc81;">Languages:</div>
+<div style="margin-left: 1em;">JavaScript, TypeScript, Java, Python, Go, Bash</div>
+<br/>
+<div style="color: #febc81;">Frameworks:</div>
+<div style="margin-left: 1em;">Next.js, NestJS, Spring Boot, Express, Node.js</div>
+<br/>
+<div style="color: #febc81;">Databases:</div>
+<div style="margin-left: 1em;">MongoDB, MySQL, PostgreSQL, Redis</div>
+<br/>
+<div style="color: #febc81;">Cloud & Infra:</div>
+<div style="margin-left: 1em;">AWS, Docker, Docker Compose, Linux, Nginx, S3, MongoDB Atlas</div>
+<br/>
+<div style="color: #febc81;">Networking:</div>
+<div style="margin-left: 1em;">DNS, TCP/UDP(Go), HTTP/HTTPS</div>
+<br/>
+<div style="color: #febc81;">Tooling:</div>
+<div style="margin-left: 1em;">Mongoose, GraphQL, Swagger UI, Postman, Git, GitHub, Socket.io</div>
 </div>`;
 
 export const CONTACT = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
-<div style="color: #febc81; margin-bottom: 0.5em;">--- Contact & Socials ---</div>
-<div style="margin-left: 1em;">
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Email:</span> mohamedaifia34@gmail.com</div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Phone:</span> +216 26 110 335</div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">LinkedIn:</span> <a href="https://www.linkedin.com/in/aifia-mohamed-amine" target="_blank" style="color: #febc81; text-decoration: none;">Aifia Mohamed Amine</a></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">GitHub:</span> <a href="https://github.com/aifia105" target="_blank" style="color: #febc81; text-decoration: none;">aifia105</a></div>
-</div>
-<div style="color: #2d3748; margin-top: 0.5em;">─────────────────────────</div>
+<div style="color: #febc81;">Email:</div>
+<div style="margin-left: 1em;">mohamedaifia34@gmail.com</div>
+<br/>
+<div style="color: #febc81;">Phone:</div>
+<div style="margin-left: 1em;">+216 26 110 335</div>
+<br/>
+<div style="color: #febc81;">LinkedIn:</div>
+<div style="margin-left: 1em;"><a href="https://www.linkedin.com/in/aifia-mohamed-amine" target="_blank" style="color: #febc81; text-decoration: none;">Aifia Mohamed Amine</a></div>
+<br/>
+<div style="color: #febc81;">GitHub:</div>
+<div style="margin-left: 1em;"><a href="https://github.com/aifia105" target="_blank" style="color: #febc81; text-decoration: none;">aifia105</a></div>
 </div>`;
 
 export const PROJECTS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
-<div style="color: #febc81; margin-bottom: 0.5em;">─── Projects ───</div>
-<div style="margin-left: 1em;">
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Shrimp Farm Management Platform (Enterprise SaaS)</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Fullstack E-Commerce Platform</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Gym Mobile Application</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Containerized URL Shortener Service</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">DNS Server from Scratch (TCP & UDP)</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Machine Learning Housing Price Predictor</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">File-Sharing Backend Service</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">GraphQL Pokémon Explorer</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">Go HTTP Server</span></div>
-  <div><span style="color: #fe8181;">▸</span> <span style="color: #d2d4d6;">CLI Linux Server Monitor (RAM, CPU, Disk)</span></div>
+<div>• Shrimp Farm Management Platform (Enterprise SaaS)</div>
+<div>• Fullstack E-Commerce Platform</div>
+<div>• Gym Mobile Application</div>
+<div>• Containerized URL Shortener Service</div>
+<div>• DNS Server from Scratch (TCP & UDP)</div>
+<div>• Machine Learning Housing Price Predictor</div>
+<div>• File-Sharing Backend Service</div>
+<div>• GraphQL Pokémon Explorer</div>
+<div>• Go HTTP Server</div>
+<div>• CLI Linux Server Monitor (RAM, CPU, Disk)</div>
+</div>`;
+
+export const LS = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
+<div style="color: #febc81;">--- Directories ---</div>
+<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">projects</span></div>
+<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">tools</span></div>
+<div><span style="color: #2d3748;">├──</span> <span style="color: #fe8181;">experience</span></div>
+<div><span style="color: #2d3748;">└──</span> <span style="color: #fe8181;">contact</span></div>
+</div>`;
+
+export const SYSTEM_INFO = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #ffffff;">
+<div style="margin-left: 1em; margin-top: 0.5em;">
+  <div><span style="color: #fe8181;">Name:</span> Aifia Mohamed Amine</div>
+  <div><span style="color: #fe8181;">Role:</span> Software Engineer</div>
+  <div><span style="color: #fe8181;">Born:</span> 27 June 2000</div>
+  <div><span style="color: #fe8181;">Location:</span> Tunis, Tunisia</div>
 </div>
-<div style="color: #2d3748; margin-top: 0.5em;">────────────────</div>
+</div>`;
+
+export const EXPERIENCE = `<div style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; color: #d2d4d6;">
+<div style="color: #febc81;">Work Experience:</div>
+<div>• Rooly S - Full-stack Developer (Mar 2024 - Present)</div>
+<div>• CMS Plus - Full-stack Developer Intern (Mar 2023 - May 2023)</div>
+<br/>
+<div style="color: #febc81;">Education:</div>
+<div>• Esprit - Software Engineering Degree (Sep 2024 - Present)</div>
+<div>• Isamm - Bachelor of Computer Science (Sep 2020 - Jun 2023)</div>
+<br/>
+<div style="color: #febc81;">Certifications:</div>
+<div>• Supervised Machine Learning: Regression and Classification - Coursera</div>
+<div>• Supervised Machine Learning: Advanced Learning Algorithms - Coursera</div>
+<div>• Server-side Development with NodeJS, Express and MongoDB - Coursera</div>
+</div>`;
+
+// Directory structure
+export const DIRECTORY_CONTENTS: Record<string, string[]> = {
+  projects: ["projects.txt"],
+  tools: ["tools.txt"],
+  contact: ["contact.txt"],
+  experience: ["experience.txt"],
+};
+
+// File contents
+export const FILE_CONTENTS: Record<string, string> = {
+  "projects/projects.txt": PROJECTS,
+  "tools/tools.txt": TOOLS,
+  "contact/contact.txt": CONTACT,
+  "experience/experience.txt": EXPERIENCE,
+};
+
+export const VALID_DIRECTORIES = Object.keys(DIRECTORY_CONTENTS);
+
+export const DIR_NOT_FOUND = (
+  dir: string
+) => `<div style="font-family: 'JetBrains Mono', monospace; color: #fe8181;">
+bash: cd: ${dir}: No such file or directory
 </div>`;
 
 export const COMMANDS = {
@@ -127,31 +189,19 @@ export const COMMANDS = {
   },
   sysinfo: {
     description: "Show system information",
-    usage: "sysinfo",
+    output: SYSTEM_INFO,
   },
   ls: {
     description: "List available directories",
-    usage: "ls",
+    output: LS,
   },
-  "ls  [directory]": {
-    description: "List directories content",
-    usage: "ls [directory]",
-  },
-  projects: {
-    description: "Show projects tree structure",
-    output: PROJECTS,
+  "cd [directory]": {
+    description: "Change directory",
+    usage: "cd [directory]",
   },
   cat: {
-    description: "Display project details",
-    usage: "cat <path>",
-  },
-  tools: {
-    description: "List available tools",
-    output: TOOLS,
-  },
-  contact: {
-    description: "Display contact information",
-    output: CONTACT,
+    description: "Display file contents",
+    usage: "cat <file>",
   },
   clear: {
     description: "Clear terminal screen",
