@@ -57,9 +57,7 @@ export const HELP_MESSAGE = `<div style="font-family: 'JetBrains Mono', monospac
   <div><span style="color: #fe8181;">sysinfo</span>          Show system information</div>
   <div><span style="color: #fe8181;">ls</span> [directory]   List available directories</div>
   <div><span style="color: #fe8181;">cat</span> &lt;path&gt;       Display project details</div>
-  <div><span style="color: #fe8181;">projects</span>         Show projects tree structure</div>
-  <div><span style="color: #fe8181;">tools</span>            List available tools</div>
-  <div><span style="color: #fe8181;">contact</span>          Display contact information</div>
+  <div><span style="color: #fe8181;">cd</span>         Change directory</div>
   <div><span style="color: #fe8181;">clear</span>            Clear terminal screen</div>
   <div><span style="color: #fe8181;">help</span>             Show this help message</div>
 </div>
