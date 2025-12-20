@@ -25,7 +25,6 @@ const CmdOutput = ({
     return null;
   }
 
-  // Handle cd command
   if (command === "cd") {
     const directory = args[0];
 
@@ -35,7 +34,7 @@ const CmdOutput = ({
           className="text-base"
           dangerouslySetInnerHTML={{
             __html:
-              "<div style=\"font-family: 'JetBrains Mono', monospace; color: #febc81;\">Usage: cd <directory></div>",
+              "<div style=\"font-family: 'JetBrains Mono', monospace; color: #febc81;\">Usage: cd [directory]</div>",
           }}
         ></div>
       );
@@ -62,7 +61,6 @@ const CmdOutput = ({
     }
   }
 
-  // Handle cat command
   if (command === "cat") {
     const filePath = args[0];
 
@@ -72,7 +70,7 @@ const CmdOutput = ({
           className="text-base"
           dangerouslySetInnerHTML={{
             __html:
-              "<div style=\"font-family: 'JetBrains Mono', monospace; color: #febc81;\">Usage: cat <file></div>",
+              "<div style=\"font-family: 'JetBrains Mono', monospace; color: #febc81;\">Usage: cat &lt;filePath&gt;</div>",
           }}
         ></div>
       );
